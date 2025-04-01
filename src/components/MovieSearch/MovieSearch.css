@@ -1,0 +1,55 @@
+.movie-search-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+
+
+
+.movie-form label{
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: 700;
+}
+    
+
+
+.movie-form input {
+    align-self: center;
+    max-width: 30%;
+    padding: 1px 50px;
+    margin-right: 15px;
+    border-radius: 5px;
+    color: black;
+    font-size: 1.3em;
+    font-weight: 550;
+}
+
+.movie-form button{
+    padding: 15px;
+    border-radius: 15px;
+    background-color: rgb(62, 248, 186);
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.movie-form button:hover{
+    transition: 0.3s ease-in-out;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba(62, 248, 186, 0.8);
+}
+
+
+.card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Cria colunas automaticamente */
+    gap: 16px; /* Espaçamento entre os cards */
+    justify-items: center; /* Centraliza os itens horizontalmente */
+    margin: 0 auto; /* Garante que o contêiner seja centralizado horizontalmente */
+    max-width: 1200px; /* Limita a largura máxima para que não fique muito largo */
+    padding: 0 16px; /* Adiciona um pequeno preenchimento lateral */
+}

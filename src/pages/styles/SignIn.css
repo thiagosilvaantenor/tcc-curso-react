@@ -1,0 +1,59 @@
+.sign-in-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.sign-in-container form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.sign-in-container label {
+    font-size: 1.2em;
+}
+
+.sign-in-container input{
+    padding: 1rem 5rem;
+    border-radius: 15px;
+    margin-bottom: 0.5rem;
+    color: #000000;
+    font-weight: 600;
+}
+
+.sign-in-container button{
+    padding: 1rem 5rem;
+    border-radius: 15px;
+    background-color: rgba(12, 237, 120, 0.98);
+    color: #000000;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    
+}
+
+.sign-in-container button:hover{
+    transition: 0.3s ease-in;
+    background-color: rgba(12, 237, 120, 0.50);
+}
+
+.sign-in-container a {
+    align-self: center;
+    text-decoration: none;
+    max-width: 20%;
+    background-color: rgb(43, 64, 226);
+    color: rgb(9, 23, 25);
+    font-weight: 600;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 3px 0px 2px black;
+}
+
+.sign-in-container a:hover{
+    transition: 0.3s ease-in-out;
+    padding: 1.1rem;
+}

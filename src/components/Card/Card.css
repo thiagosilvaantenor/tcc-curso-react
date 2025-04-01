@@ -1,0 +1,27 @@
+.card-container {
+    width: 100%; /* O card irá preencher toda a largura da célula do grid */
+    border: 1px solid #1e1919;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 16px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.card-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card-container h2,
+.card-container h3 {
+    margin: 8px 0;
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 768px) {
+    .cards-wrapper {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Exibe 1 card por linha em telas pequenas */
+    }
+}

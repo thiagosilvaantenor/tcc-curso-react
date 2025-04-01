@@ -1,6 +1,8 @@
+import './Menu.css'
+
 export default function Menu() {
     return(
-        <div>
+        <div className='menu-container'>
             <nav>
                 <a href="/">Inicio</a>
                 <a href="/user">Cadastro</a>

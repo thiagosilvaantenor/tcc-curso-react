@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useUser } from "../context/ContextUser"
+import './styles/Login.css'
 
 export default function Login() {
 
@@ -24,7 +25,7 @@ export default function Login() {
     }
 
     return (
-        <div>
+        <div className="login-container">
             <h1>Login</h1>
             <form onSubmit={handleLogin}>
                 <label htmlFor="email">Email: </label>

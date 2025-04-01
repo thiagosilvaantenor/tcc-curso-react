@@ -1,0 +1,26 @@
+.menu-container nav{
+    margin-top: 0.2rem;
+    display: flex;
+    margin-left: 15%;
+    justify-content: space-around;
+    border-radius: 15px;
+}
+
+.menu-container nav a {
+    text-decoration: none;
+    border-radius: 15px;
+    border: 1px solid black;
+    padding: 1rem;
+    background-color: rgb(43, 64, 226);
+    color: rgb(9, 23, 25);
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 3px 0px 2px black;
+    margin-bottom: 15px;
+}
+
+.menu-container a:hover {
+    transition: 0.3s ease-in-out;
+    background-color: rgba(43, 64, 226, 0.5);
+    padding: 1.1rem;
+}

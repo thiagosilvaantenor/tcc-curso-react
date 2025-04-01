@@ -1,3 +1,4 @@
+import './Card.css'
 interface CardProps{
     poster: string,
     title: string,
@@ -6,8 +7,8 @@ interface CardProps{
 
 const Card : React.FC<CardProps> = ({poster, title, year}) => {
     return(
-
-        <div>
+        
+        <div className="card-container">
             <img src={poster} alt="" />
             <h2>{title}</h2>
             <h3>{year}</h3>

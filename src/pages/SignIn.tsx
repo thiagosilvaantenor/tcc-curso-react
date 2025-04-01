@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useUser } from "../context/ContextUser";
+import './styles/SignIn.css'
 
 
 
@@ -36,7 +37,7 @@ export default function SignIn() {
     };
 
     return (
-        <div>
+        <div className="sign-in-container">
             <h1>Cadastre-se</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="name">Nome: </label>
