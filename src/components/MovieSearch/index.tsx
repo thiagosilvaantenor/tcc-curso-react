@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Card from "../Card";
 import './MovieSearch.css'
 
@@ -8,9 +8,10 @@ interface Movies {
     Year: string,
 }
 
+
 const API_KEY = "34e15e4e";
 
-export default function MovieSearch() {
+const MovieSearch = () => {
     const [title, setTitle] = useState("");
     const [movies, setMovies] = useState<Movies[] | null>([]);
     const [error, setError] = useState("");
@@ -56,6 +57,7 @@ export default function MovieSearch() {
                 {error && <p className="error">{error}</p>}
                 {movies?.map((movie) => (
                     <Card
+                    key={movie.Title}
                     title={movie.Title}
                     poster={movie.Poster}
                     year={movie.Year}
@@ -67,3 +69,4 @@ export default function MovieSearch() {
         </div>
     )
 }
+export default MovieSearch

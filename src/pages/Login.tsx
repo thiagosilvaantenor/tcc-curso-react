@@ -1,12 +1,14 @@
 import { useState } from "react"
 import { useUser } from "../context/ContextUser"
 import './styles/Login.css'
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const {users} = useUser();
+    const navigate = useNavigate();
 
     //Função para lidar com o login
     const handleLogin = (event: React.FormEvent) => {
@@ -18,11 +20,13 @@ export default function Login() {
 
         if (user){
             //TODO: Caso credenciais corretas deve seguir para a lista do usuário
+            navigate('/userlist', {
+                state: {user:user},
+            });
         } else {
             alert('Erro, informações invalidas, tente novamente');
         }
-
-    }
+    };
 
     return (
         <div className="login-container">
