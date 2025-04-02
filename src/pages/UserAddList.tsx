@@ -1,30 +1,17 @@
-import { useLocation, useNavigate } from "react-router-dom";
-import MovieSearch from "../components/MovieSearch"
-import { useState } from "react";
-
-
-interface Movies {
-    Title: string,
-    Poster: string,
-    Year: string,
-}
+import { useLocation } from 'react-router-dom';
+import MovieSearch from "../components/MovieSearch";
+import { useUser } from '../context/ContextUser'
 
 const UserAddList = () => {
-
     const location = useLocation();
-    const { user } = location.state || {};
-    const [movies, setMovies] = useState<Movies[] | null>(null)
+    const { user } = location.state || {};  // Acessando o usuário logado via estado de navegação
     
-    setMovies(user.movies)
-    
-    const navigate = useNavigate();
-
-    return(
+    return (
         <div>
-            <h1>Olá {user.name}, aqui você pode adicionar filmes a sua lista</h1>
-            <MovieSearch 
-            />
+            <h1>Olá {user?.name}, aqui você pode adicionar filmes à sua lista</h1>
+            <MovieSearch user={user} /> {/* Passando o usuário para o componente de busca */}
         </div>
-    )
-}
-export default UserAddList
+    );
+};
+
+export default UserAddList;
