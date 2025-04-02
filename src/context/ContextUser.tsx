@@ -1,19 +1,8 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
+import { User, UserMovie } from "../types/Types";
 
 //Define o tipo Usuário
-type User = {
-    id: string,
-    name: string,
-    email: string,
-    password: string,
-    movieIds: string[],
-};
 
-interface UserMovie {
-    idMovie: string,
-    title: string,
-    poster: string,
-}
 //Define o tipo do contexto do usuário
 type UserContextType = {
     users: User[];

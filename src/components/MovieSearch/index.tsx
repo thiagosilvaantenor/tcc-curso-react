@@ -1,12 +1,9 @@
 import React, { useState } from "react";
+import { Movies } from "../../types/Types";
 import Card from "../Card";
-import './MovieSearch.css'
+import { getMoviebyTitle } from "../service/MovieAPI";
+import './MovieSearch.css';
 
-interface Movies {
-    Title: string;
-    Poster: string;
-    Year: string;
-}
 
 const API_KEY = "34e15e4e";
 
@@ -23,18 +20,18 @@ const MovieSearch = ({ user }: { user?: { id: string } }) => {
         }
 
         try {
-            const response = await fetch(`https://www.omdbapi.com/?s=${title}&apikey=${API_KEY}`);
-            const data = await response.json();
-
-            if (data.Response === "False") {
-                setError("Filme não encontrado!");
-                setMovies(null);
+            const data = getMoviebyTitle(title)
+            if (typeof (data) == typeof (movies)) {
+                setMovies(await data);
             } else {
-                setMovies(data.Search.slice(0, 5));  // Limita a 5 resultados
-                setError("");
+                setError("Erro filme invalido, tente escrever o titulo em inglês")
             }
         } catch (err) {
             setError("Erro ao buscar o Filme.");
+        } finally {
+            if (error != '') {
+                alert(error);
+            }
         }
     };
 
@@ -59,7 +56,7 @@ const MovieSearch = ({ user }: { user?: { id: string } }) => {
                             title={movie.Title}
                             poster={movie.Poster}
                             year={movie.Year}
-                            user={user}  // Passando o user para o Card
+                            user={user}
                         />
                     ))}
                 </div>

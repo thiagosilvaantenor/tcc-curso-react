@@ -1,6 +1,5 @@
 import { useLocation } from 'react-router-dom';
 import MovieSearch from "../components/MovieSearch";
-import { useUser } from '../context/ContextUser'
 
 const UserAddList = () => {
     const location = useLocation();
