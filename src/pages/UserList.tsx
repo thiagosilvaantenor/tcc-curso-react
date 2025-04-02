@@ -17,19 +17,17 @@ const UserList = () => {
     }
 
     const getList = () => {
-        let data;
-        let listMovies:Movies[] = [];
+        let data: Promise<Movies | null>;
 
         user.movieIds?.forEach(async (id: string) => {
             data = getMovieById(id)
             if (typeof (data) === typeof (movies)) {
-                listMovies.push(await data);
+                setMovies([...movies, data]);
             } else {
                 alert("Erro filme invalido, tente escrever o titulo em inglês")
             }
 
         });
-        setMovies(listMovies);
     }
 
 
